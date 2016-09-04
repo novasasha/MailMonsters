@@ -1,21 +1,16 @@
 <h1>MailMonsters</h1>
-<% if current_user != nil %>
-	<% user = current_user %>
-	<% gmail = Gmail.connect(:xoauth2, user.email, user.oauth_token) %>
-	<% emails = gmail.inbox.emails %>
-	<ul>
-	<% for i in 0...(emails.length) %>
-	<% if emails[i] != nil %>
-   			<li> <%= emails[i].message.from %> </li>
-   			<li> <%= emails[i].message.subject %> </li>
-   			<li> <%= emails[i].message.date %> </li>
-   			<li> <%= emails[i].message.text_part.body.decoded %> </li>
-   			<li>break </li>
-   			<% else %>
-   			<p>fuck</p>
-   			<% end %>
-	<% end %>
-	</ul>
-<% else %>
-	<p>LOGIN TO SEE SHIT</p>
-<% end %> 
+	<table>
+		<% for i in 0...(@emails.length) %>
+			<tr>
+				<td><%= link_to "email", email_path(i) %></td>
+				<td><%= sender_name(@emails[i])[0] %></td>
+				<td>
+					<span><%= email_subject(@emails[i]) %></span> 
+		   			<span><% email_text_body(@emails[i]) %></span>
+				</td>
+		   		<td><%= email_recieved_date(@emails[i])%></td>
+			</tr>
+		<% end %>
+	</table>
+		
+	
