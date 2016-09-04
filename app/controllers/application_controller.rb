@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   end
 
   def email_recieved_date(email)
-  	email.message.date
+  	email.message.date.strftime('%b %d')
   end
 
   def email_text_body(email)

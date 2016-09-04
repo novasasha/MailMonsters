@@ -1,16 +1,16 @@
 <h1>MailMonsters</h1>
-	<ul>
+	<table>
 		<% for i in 0...(@emails.length) %>
-			<div>
-				<li> 
-				<%= link_to "email", email_path(i) %>
-				<%= sender_name(@emails[i])[0]%>
-				<%= sender_email_address(@emails[i]).to_s %>
-	   			<%= email_recieved_date(@emails[i]) %> 
-	   			<%= email_subject(@emails[i]) %> 
-	   			<%= email_text_body(@emails[i]) %> 
-	   			</li>
-			</div>
-	   		<br>
+			<tr>
+				<td><%= link_to "email", email_path(i) %></td>
+				<td><%= sender_name(@emails[i])[0] %></td>
+				<td>
+					<span><%= email_subject(@emails[i]) %></span> 
+		   			<span><% email_text_body(@emails[i]) %></span>
+				</td>
+		   		<td><%= email_recieved_date(@emails[i])%></td>
+			</tr>
 		<% end %>
-	</ul>
+	</table>
+		
+	
