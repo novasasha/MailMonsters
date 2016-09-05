@@ -13,4 +13,11 @@ class MonstersController < ApplicationController
     render :email
   end
 
+  def destroy
+    index_number = params[:id].to_i
+    @email = inbox_emails[index_number]
+    @email.delete!
+    redirect_to root_path
+  end
+
 end
