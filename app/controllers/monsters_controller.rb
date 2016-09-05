@@ -9,7 +9,8 @@ class MonstersController < ApplicationController
 
   def email
     index_number = params[:id].to_i
-  	@email = inbox_emails[index_number]
+    @email = inbox_emails[index_number]
+    render :email, layout: false
   end
 
 end
