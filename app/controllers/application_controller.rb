@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   end
 
   def user_gmail
-  	user = current_user
-	gmail = Gmail.connect(:xoauth2, user.email, user.oauth_token)
+    user = current_user
+	  gmail = Gmail.connect(:xoauth2, user.email, user.oauth_token)
   end
 
   def user_gmail_inbox

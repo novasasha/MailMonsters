@@ -14,7 +14,20 @@ class MonstersController < ApplicationController
   end
 
   def compose
-    @email = {}
+  end
+
+  def send_email
+    email_address = params[:address]
+    email_subject = params[:subject]
+    email_body = params[:body]
+    
+    email = user_gmail.compose do
+      to      email_address
+      subject email_subject
+      body    email_body
+    end
+    email.deliver!
+    redirect_to root_path
   end
 
   def destroy
