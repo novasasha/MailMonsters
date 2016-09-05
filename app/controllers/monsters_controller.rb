@@ -14,7 +14,7 @@ class MonstersController < ApplicationController
   end
 
   def compose
-    @email
+    @email = {}
   end
 
   def destroy

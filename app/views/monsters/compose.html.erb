@@ -1,6 +1,13 @@
-<%= form_for @email do |f| %>
-	<%= f.text_field :address %>
-	<%= f.text_field :subject %>
-	<%= f.text_area :body %>
-	<%= f.submit 'send' %>
-<% end %>
+<div>
+	<%= form_tag do%>
+		<%= label_tag 'to'%>
+		<%= email_field_tag :address %>
+
+		<%= label_tag 'subject'%>
+		<%= text_field_tag :subject %>
+
+		<%= label_tag 'body'%>
+		<%= text_area_tag :body %>
+		<%= submit_tag 'send' %>
+	<% end %>
+</div>
