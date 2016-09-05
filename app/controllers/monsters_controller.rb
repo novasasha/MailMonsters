@@ -13,6 +13,10 @@ class MonstersController < ApplicationController
     render :email
   end
 
+  # def compose_mail
+    
+  # end
+
   def destroy
     index_number = params[:id].to_i
     @email = inbox_emails[index_number]
