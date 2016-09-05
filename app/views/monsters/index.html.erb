@@ -2,7 +2,6 @@
 	<table>
 		<% for i in 0...(@emails.length) %>
 			<tr>
-				<td><%= link_to "email", email_path(i) %></td>
 				<td><%= sender_name(@emails[i])[0] %></td>
 				<td>
 					<span><%= email_subject(@emails[i]) %></span> 
