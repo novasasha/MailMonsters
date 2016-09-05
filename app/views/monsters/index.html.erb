@@ -1,23 +1,21 @@
 
-<div>
-      <% if current_user %>
-        Signed in as <strong><%= current_user.name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
-      <% else %>
-        <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
-      <% end %>
-</div>
 <h1>MailMonsters</h1>
 	<div id='email-area'>
 		<table>
 			<% for i in 0...(@emails.length) %>
-				<tr data-link="<%= email_path(i) %>"class='email-information'>
-					<td><%= sender_name(@emails[i])[0] %></td>
+				<tr class='email-information'>
+					<td><a href='<%= email_path(i) %>'><%= sender_name(@emails[i])[0] %></td></a>
 					<td>
+						<a href='<%= email_path(i) %>'>
 						<span><%= email_subject(@emails[i]) %></span> 
 			   			<span><% email_text_body(@emails[i]) %></span>
+			   			</a>
 					</td>
-			   		<td><%= email_recieved_date(@emails[i])%></td>
+			   		<td>
+			   			<a href='<%= email_path(i) %>'>
+			   			<%= email_recieved_date(@emails[i])%>
+			   			</a>
+			   		</td>
 				</tr>
 			<% end %>
 		</table>
