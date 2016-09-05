@@ -1,13 +1,2 @@
-<div>
-	<%= sender_name(@email)[0] %>
-	<%= sender_email_address(@email) %>	
-	<%= email_recieved_date(@email) %>
-</div>
-<br>
-<div> 
-	<%= email_subject(@email) %>
-</div>
-<br>
-<div>
-	<%= email_text_body(@email) %>
-</div>
+<%= render partial: 'email', locals: { email: @email} %>
+	
