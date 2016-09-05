@@ -1,9 +1,11 @@
 class MonstersController < ApplicationController
   
   def index
-    inbox = user_gmail_location('inbox')
-  	@emails = []
-		@emails = location_emails(inbox)
+    @emails = []
+    if current_user != nil
+      inbox = user_gmail_location('inbox')
+		  @emails = location_emails(inbox)
+    end
   end
 
   def trash

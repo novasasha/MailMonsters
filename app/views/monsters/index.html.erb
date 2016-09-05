@@ -2,7 +2,7 @@
 <h1>MailMonsters</h1>
 	<div id='email-area'>
 		<table>
-			<% i = (@emails.length) -1 %>
+			<% i = (@emails.length) - 1 %>
 			<% until i < 0 %>
 				<tr class='email-information'>
 					<td><a href='<%= email_path(i) %>'><%= sender_name(@emails[i])[0] %></td></a>
