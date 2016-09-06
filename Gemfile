@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem "gmail"
 gem "omniauth-google-oauth2"
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

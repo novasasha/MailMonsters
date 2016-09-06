@@ -1,30 +1,33 @@
 class MonstersController < ApplicationController
 
   def index
-    @emails = []
+    emails = []
     if current_user != nil
       inbox = user_gmail_location('inbox')
-		  @emails = location_emails(inbox)
+		  emails = location_emails(inbox)
     end
+    render json: emails.to_json
   end
 
   def trash
     trash = user_gmail_location('trash')
-    @emails = []
-    @emails = location_emails(trash)
+    emails = []
+    emails = location_emails(trash)
+    render json: emails.to_json
   end
 
   def junk
     junk = user_gmail_location('junk')
-    @emails = []
-    @emails = location_emails(junk)
+    emails = []
+    emails = location_emails(junk)
+    render json: emails.to_json
   end
 
   def email
     index_number = params[:id].to_i
     inbox = user_gmail_location('inbox')
-    @email = location_emails(inbox)[index_number]
-    render :email
+    email = location_emails(inbox)[index_number]
+    render json: email.to_json
   end
 
   def compose
@@ -46,8 +49,8 @@ class MonstersController < ApplicationController
 
   def destroy
     index_number = params[:id].to_i
-    @email = inbox_emails[index_number]
-    @email.delete!
+    email = inbox_emails[index_number]
+    email.delete!
     redirect_to root_path
   end
 
