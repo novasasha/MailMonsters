@@ -1,10 +1,22 @@
 <div>
 	<%= sender_name(email)[0] %>
-	<%= sender_email_address(email) %>	
+	<%= sender_email_address(email) %>
 	<%= email_recieved_date(email) %>
+	<div class="dropdown">
+  <button class="dropbtn">Apply a Label</button>
+  <div class="dropdown-content">
+    <% list_all_labels.each do |label| %>
+      <% unless !!label.match(/(\[Gmail\])/) || label == 'INBOX' %>
+        <form action="index.html" method="post">
+          <input type="submit" name="label" value="<%= label %>">
+        </form>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 </div>
 <br>
-<div> 
+<div>
 	<%= email_subject(email) %>
 </div>
 <br>

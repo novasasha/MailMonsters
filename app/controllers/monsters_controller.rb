@@ -1,5 +1,5 @@
 class MonstersController < ApplicationController
-  
+
   def index
     @emails = []
     if current_user != nil
@@ -18,11 +18,12 @@ class MonstersController < ApplicationController
     junk = user_gmail_location('junk')
     @emails = []
     @emails = location_emails(junk)
-  end  
+  end
 
   def email
     index_number = params[:id].to_i
-    @email = inbox_emails[index_number]
+    inbox = user_gmail_location('inbox')
+    @email = location_emails(inbox)[index_number]
     render :email
   end
 
@@ -33,7 +34,7 @@ class MonstersController < ApplicationController
     email_address = params[:address]
     email_subject = params[:subject]
     email_body = params[:body]
-    
+
     email = user_gmail.compose do
       to      email_address
       subject email_subject
