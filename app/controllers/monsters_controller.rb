@@ -1,4 +1,4 @@
-class MonstersController < ApplicationController
+class MailController < ApplicationController
 
   def index
     emails = []

@@ -9,16 +9,16 @@ Rails.application.routes.draw do
 		get 'signout', to: 'sessions#destroy', as: 'signout'
 	end
 	namespace :api, contraints: { format: :json } do
-		get 'trash', to: 'monsters#trash', as: 'trash'
-		get 'junk', to: 'monsters#junk', as: 'junk'
-		get 'email/compose', to: 'monsters#compose', as: 'new_email'
-		post '/send', to: 'monsters#send_email'
-		get 'email/:id', to: 'monsters#email', as: 'email'
-		delete 'email/:id', to: 'monsters#destroy', as: 'email_delete'
-		root 'monsters#index'
+		get 'trash', to: 'mail#trash', as: 'trash'
+		get 'junk', to: 'mail#junk', as: 'junk'
+		get 'email/compose', to: 'mail#compose', as: 'new_email'
+		post '/send', to: 'mail#send_email'
+		get 'email/:id', to: 'mail#email', as: 'email'
+		delete 'email/:id', to: 'mail#destroy', as: 'email_delete'
+		root 'mail#index'
 	end
-	
+
 
 	resources :sessions, only: [:create, :destroy]
-  	resource :monsters, only: [:index]
+  	resource :mail, only: [:index]
 end
