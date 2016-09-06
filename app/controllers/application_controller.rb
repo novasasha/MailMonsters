@@ -8,17 +8,18 @@ class ApplicationController < ActionController::Base
   end
 
   def user_gmail
-  	user = current_user
-	   gmail = Gmail.connect(:xoauth2, user.email, user.oauth_token)
+    user = current_user
+	  gmail = Gmail.connect(:xoauth2, user.email, user.oauth_token)
   end
 
-  def user_gmail_inbox
-  	user_gmail.inbox
+  def user_gmail_location(location)
+  	user_gmail.mailbox(location)
   end
 
-  def inbox_emails
-  	user_gmail_inbox.emails
+  def location_emails(location)
+  	location.emails
   end
+
 
   def sender_name(email)
 	name = email.sender.collect(&:name)
