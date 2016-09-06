@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :user_gmail, :user_gmail_inbox, :inbox_emails, :sender_name, :sender_email_address, :email_subject, :email_recieved_date, :email_text_body, :list_all_labels, :create_label, :delete_label, :apply_label, :create_and_apply_label
+  helper_method :current_user, :user_gmail, :user_gmail_inbox, :sender_name, :sender_email_address, :email_subject, :email_recieved_date, :email_text_body, :list_all_labels, :create_label, :delete_label, :apply_label, :create_and_apply_label
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

@@ -22,7 +22,8 @@ class MonstersController < ApplicationController
 
   def email
     index_number = params[:id].to_i
-    @email = inbox_emails[index_number]
+    inbox = user_gmail_location('inbox')
+    @email = location_emails(inbox)[index_number]
     render :email
   end
 
