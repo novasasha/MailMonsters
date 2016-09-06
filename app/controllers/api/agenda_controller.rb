@@ -1,4 +1,5 @@
-class MonstersController < ApplicationController
+class Api::AgendaController < ApplicationController
+  respond_to :json
 
   def index
     emails = []
@@ -53,5 +54,4 @@ class MonstersController < ApplicationController
     email.delete!
     redirect_to root_path
   end
-
 end
