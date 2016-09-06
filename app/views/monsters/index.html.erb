@@ -4,10 +4,10 @@
 		<table>
 			<% for i in 0...(@emails.length) %>
 				<tr class='email-information'>
-					<td><a href='<%= email_path(i) %>'><%= sender_name(@emails[i])[0] %></td></a>
+					<td><a href='<%= email_path(i) %>'><%= sender_name(@emails[i])[0] %></a></td>
 					<td>
 						<a href='<%= email_path(i) %>'>
-						<span><%= email_subject(@emails[i]) %></span> 
+						<span><%= email_subject(@emails[i]) %></span>
 			   			<span><% email_text_body(@emails[i]) %></span>
 			   			</a>
 					</td>
@@ -20,6 +20,3 @@
 			<% end %>
 		</table>
 	</div>
-	
-		
-	

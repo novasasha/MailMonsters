@@ -1,11 +1,11 @@
 class MonstersController < ApplicationController
-  
+
   def index
   	@emails = []
   	if current_user != nil
-		@emails = inbox_emails
+		@emails = user_gmai_inbox
   	end
-  end 
+  end
 
   def email
     index_number = params[:id].to_i
