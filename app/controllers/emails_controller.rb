@@ -6,16 +6,22 @@ class EmailsController < ApplicationController
     @emails = location_emails(inbox)
   end
 
-  def trash
-    trash = user_gmail_mailbox('trash')
-    @emails = []
-    @emails = location_emails(trash)
-  end
+  # def trash
+  #   trash = user_gmail_mailbox('trash')
+  #   @emails = []
+  #   @emails = location_emails(trash)
+  # end
+  #
+  # def junk
+  #   junk = user_gmail_mailbox('junk')
+  #   @emails = []
+  #   @emails = location_emails(junk)
+  # end
 
-  def junk
-    junk = user_gmail_mailbox('junk')
+  def mailbox
+    mailbox = params[:mailbox]
     @emails = []
-    @emails = location_emails(junk)
+    @emails = location_emails(mailbox)
   end
 
   def email

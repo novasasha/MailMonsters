@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 	get 'email/compose', to: 'emails#compose', as: 'new_email'
 	post '/send', to: 'emails#send_email'
 	get 'email/:id', to: 'emails#email', as: 'email'
+	get ':mailbox', to: 'emails#mailbox'
 	delete 'email/:id', to: 'emails#destroy', as: 'email_delete'
 
 
