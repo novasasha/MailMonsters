@@ -21,16 +21,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   </head>
-
-
-
   <body>
     <div id='app-area'>
       <!-- Insert Materialize template -->
       <% if current_user && current_user.monster_id != nil %>
         <nav class="white" role="navigation">
           <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo">Logo</a>
+            <!-- <a id="logo-container" href="#" class="brand-logo">Logo</a> -->
             <ul class="right hide-on-med-and-down">
               <!-- <li><a href="#"><%= current_user.name %>' Inbox</a></li> -->
               <li><%= link_to 'Compose', new_email_path %></li>
@@ -62,9 +59,9 @@
           </div>
         </nav>
         <!-- container -->
-        <%= yield %>
+          <%= yield %>
         <!-- container -->
-          <% elsif current_user.monster_id == nil %>
+          <% elsif current_user && current_user.monster_id == nil %>
         <!-- container -->
           <%= yield %>
         <!-- container -->
@@ -73,12 +70,6 @@
         <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
       <% end %>
     </div>
-
-
-
-
-
-
     <!--  Scripts-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.js"></script>
