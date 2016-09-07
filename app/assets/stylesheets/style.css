@@ -70,9 +70,7 @@ footer.page-footer {
 }
 
 
-
-
-/* Login container */
+/* LOGIN PAGE */
 .login-wrap {
   background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/login.jpg);
   background-size: 40%;
@@ -90,4 +88,10 @@ footer.page-footer {
 .logo-button {
   text-align: center;
 
+}
+
+/* MONSTER SELECT PAGE */
+
+#monster-select {
+  width: 20%;
 }
