@@ -5,7 +5,7 @@ class MonstersController < ApplicationController
       if current_user.monster_id == nil
         redirect_to monster_selector_path
       else
-        redirect_to mailbox_path
+        redirect_to "/inbox"
       end
     end
   end
