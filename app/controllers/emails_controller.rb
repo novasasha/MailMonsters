@@ -1,5 +1,6 @@
 class EmailsController < ApplicationController
 
+# open a mail depending on what is supplied to as params eg inbox, trash junk
   def mailbox
     @emails = []
     location = params[:mailbox]
@@ -7,17 +8,20 @@ class EmailsController < ApplicationController
     @emails = location_emails(mailbox)
   end
 
-  def email
+# open a clicked on email
+  def show
     index_number = params[:id].to_i
-    inbox = user_gmail_mailbox('inbox')
-    @email = location_emails(inbox)[index_number]
-    render :email
+    location = params[:mailbox]
+    box = user_gmail_mailbox(location)
+    @email = location_emails(box)[index_number]
   end
 
-  def compose
+# links to a page to create a email
+  def new
   end
 
-  def send_email
+# sends the email 
+  def create
     email_address = params[:address]
     email_subject = params[:subject]
     email_body = params[:body]
@@ -31,6 +35,7 @@ class EmailsController < ApplicationController
     redirect_to root_path
   end
 
+# deletes the email from the inbox and moves it to the trash
   def destroy
     index_number = params[:id].to_i
     @email = inbox_emails[index_number]
