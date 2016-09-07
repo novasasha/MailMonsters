@@ -2,30 +2,68 @@
 <html>
   <head>
     <title>MailMonsters</title>
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
+    <!-- CSS 1-materialize, 2-rails default -->
+    <!-- 1 -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- 2 -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   </head>
+
+
+
   <body>
     <div id='app-area'>
+      <!-- Insert Materialize template -->
       <% if current_user %>
+      <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+          <a id="logo-container" href="#" class="brand-logo">Logo</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">Starred</a></li>
+            <li><a href="#">Navbar Link</a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">Starred</a></li>
+            <li><a href="#">Navbar Link</a></li>
+            <li><a href="#">Navbar Link</a></li>
+            <li><a href="#">Navbar Link</a></li>
+            <li><a href="#">Navbar Link</a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
         <div>
           Signed in as <strong><%= current_user.name %></strong>!
           <%= link_to "Sign out", signout_path, id: "sign_out" %>
         </div>
-
         <div>
         <%= link_to 'Compose', new_email_path %>
         </div>
-        
-
       <% else %>
         <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
-
       <% end %>
+      <!-- container -->
       <%= yield %>
     </div>
+
+
+
+
+
+
+    <!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
   </body>
 </html>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 	get 'trash', to: 'emails#trash', as: 'trash'
 	get 'junk', to: 'emails#junk', as: 'junk'
 	get 'email/compose', to: 'emails#compose', as: 'new_email'
+	post '/monster_choice', to: 'monsters#monster_choice'
 	post '/send', to: 'emails#send_email'
 	get 'email/:id', to: 'emails#email', as: 'email'
 	get ':mailbox', to: 'emails#mailbox'
