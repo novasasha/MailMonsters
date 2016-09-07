@@ -12,12 +12,12 @@ class ApplicationController < ActionController::Base
 	  gmail = Gmail.connect(:xoauth2, user.email, user.oauth_token)
   end
 
-  def user_gmail_location(location)
-  	user_gmail.mailbox(location)
+  def user_gmail_mail_box(mailbox)
+  	user_gmail.mailbox(mailbox)
   end
 
-  def location_emails(location)
-  	location.emails
+  def location_emails(mailbox)
+  	mailbox.emails
   end
 
 

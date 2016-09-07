@@ -3,15 +3,17 @@ Rails.application.routes.draw do
 	get 'auth/:provider/callback', to: 'sessions#create'
 	get 'auth/failure', to: redirect('/')
 	get 'signout', to: 'sessions#destroy', as: 'signout'
-	get 'trash', to: 'monsters#trash', as: 'trash'
-	get 'junk', to: 'monsters#junk', as: 'junk'
-	get 'email/compose', to: 'monsters#compose', as: 'new_email'
-	post '/send', to: 'monsters#send_email'
-	get 'email/:id', to: 'monsters#email', as: 'email'
-	delete 'email/:id', to: 'monsters#destroy', as: 'email_delete'
+	get 'inbox', to: 'emails#inbox', as: 'inbox'
+	get 'monster_selector', to: 'emails#monster_selector', as: 'monster_selector'
+	get 'trash', to: 'emails#trash', as: 'trash'
+	get 'junk', to: 'emails#junk', as: 'junk'
+	get 'email/compose', to: 'emails#compose', as: 'new_email'
+	post '/send', to: 'emails#send_email'
+	get 'email/:id', to: 'emails#email', as: 'email'
+	delete 'email/:id', to: 'emails#destroy', as: 'email_delete'
 	
 
 	resources :sessions, only: [:create, :destroy]
-  	resource :monsters, only: [:index]
-  	root 'monsters#index'
+  	resource :emails, only: [:index]
+  	root 'emails#index'
 end
