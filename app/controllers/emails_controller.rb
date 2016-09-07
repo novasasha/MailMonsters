@@ -14,9 +14,10 @@ class EmailsController < ApplicationController
   end
 
   def monster_choice
-    puts '--------------------------------------'
-    puts params[:commit]
-    redirect_to inbox_path
+    monster = params[:commit].to_i
+    current_user.monster_id = monster
+    current_user.save
+    redirect_to root_path
   end
 
   def inbox
