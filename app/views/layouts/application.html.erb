@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>MailMonsters</title>
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
@@ -19,7 +20,7 @@
         <div>
         <%= link_to 'Compose', new_email_path %>
         </div>
-        
+
 
       <% else %>
         <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
