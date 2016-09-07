@@ -13,6 +13,12 @@ class EmailsController < ApplicationController
   def monster_selector
   end
 
+  def monster_choice
+    puts '--------------------------------------'
+    puts params[:commit]
+    redirect_to inbox_path
+  end
+
   def inbox
     @emails = []
     inbox = user_gmail_mail_box('inbox')
