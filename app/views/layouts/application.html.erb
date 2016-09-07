@@ -4,7 +4,7 @@
     <title>MailMonsters</title>
     <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -27,48 +27,51 @@
   <body>
     <div id='app-area'>
       <!-- Insert Materialize template -->
-      <% if current_user %>
-      <nav class="white" role="navigation">
-        <div class="nav-wrapper container">
-          <a id="logo-container" href="#" class="brand-logo">Logo</a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="#">Inbox</a></li>
-            <li><a href="#">To Do</a></li>
-            <li><a href="#">Starred</a></li>
-            <li><a href="#">Sent</a></li>
-            <li><a href="#">Drafts</a></li>
-            <li><a href="#">Junk</a></li>
-            <li><a href="#">Trash</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Logout</a></li>
-          </ul>
+      <% if current_user && current_user.monster_id != nil %>
+        <nav class="white" role="navigation">
+          <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+              <!-- <li><a href="#"><%= current_user.name %>' Inbox</a></li> -->
+              <li><%= link_to 'Compose', new_email_path %></li>
+              <li><a href="#">Inbox</a></li>
+              <li><a href="#">To Do</a></li>
+              <li><a href="#">Starred</a></li>
+              <li><a href="#">Sent</a></li>
+              <li><a href="#">Drafts</a></li>
+              <li><a href="#">Junk</a></li>
+              <li><a href="#">Trash</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+            </ul>
 
-          <ul id="nav-mobile" class="side-nav">
-            <li><a href="#">Inbox</a></li>
-            <li><a href="#">To Do</a></li>
-            <li><a href="#">Starred</a></li>
-            <li><a href="#">Sent</a></li>
-            <li><a href="#">Drafts</a></li>
-            <li><a href="#">Junk</a></li>
-            <li><a href="#">Trash</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Logout</a></li>
-          </ul>
-          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-        </div>
-      </nav>
-        <div>
-          Signed in as <strong><%= current_user.name %></strong>!
-          <%= link_to "Sign out", signout_path, id: "sign_out" %>
-        </div>
-        <div>
-        <%= link_to 'Compose', new_email_path %>
-        </div>
+            <ul id="nav-mobile" class="side-nav">
+              <li><a href="#"><%= current_user.name %>' Inbox</a></li>
+              <li><%= link_to 'Compose', new_email_path %></li>
+              <li><a href="#">Inbox</a></li>
+              <li><a href="#">To Do</a></li>
+              <li><a href="#">Starred</a></li>
+              <li><a href="#">Sent</a></li>
+              <li><a href="#">Drafts</a></li>
+              <li><a href="#">Junk</a></li>
+              <li><a href="#">Trash</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          </div>
+        </nav>
+        <!-- container -->
+        <%= yield %>
+        <!-- container -->
+          <% elsif current_user.monster_id == nil %>
+        <!-- container -->
+          <%= yield %>
+        <!-- container -->
+
       <% else %>
         <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
       <% end %>
-      <!-- container -->
-      <%= yield %>
     </div>
 
 
