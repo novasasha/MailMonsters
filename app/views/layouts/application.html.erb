@@ -25,11 +25,21 @@
     <div id='app-area'>
       <% if current_user %>
         <% if current_user.monster_id != nil %>
+          <nav class="top-nav">
+            <div class="container">
+              <div class="nav-wrapper">
+                <a class="page-title">Color</a>
+              </div>
+            </div>
+          </nav>
+          <div class="container">
+            <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a>
+          </div>
           <!-- render navigation partial -->
           	<%= render "layouts/nav" %>
           <!-- render mailbox -->
             <!-- container -->
-            <h1>I have a monster</h1>
+            <h1>Yeild goes here</h1>
             <!-- container -->
         <% else %>
           <!-- render monster selector -->

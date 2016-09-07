@@ -1,32 +1,32 @@
-<div class="container">
-</div>
-  <a href="#" data-activates="nav-mobile" class="button-collapse top-nav circle hide-on-large-only"><i class="material-icons">menu</i></a>
-
-  <ul id="nav-mobile" class="side-nav fixed padding-bottom">
-    <li class="logo">
-      <%= link_to root_path, id: "logo-container", class: "brand-logo" do %>
-        <%= image_tag "https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/logo-cloud.png" %>
-      <% end %>
-    </li>
-    <br>
-    <li class="search">
-      <div class="search-wrapper card">
-        <input id="search"><i class="material-icons">search</i>
-        <div class="search-results"></div>
-      </div>
-    </li>
-    <li class="bold">
-      <%= link_to 'Compose', new_email_path, :class => "btn-large blue" %>
-    </li>
-    <li class="bold"><a href="#" class="waves-teal">Inbox</a></li>
-    <li class="bold"><a href="#" class="waves-effect waves-teal">To Do</a></li>
-    <li class="bold"><a href="#" class="waves-effect waves-teal">Starred</a></li>
-    <li class="bold"><a href="#" class="waves-effect waves-teal">Sent</a></li>
-    <li class="bold"><a href="#" class="waves-effect waves-teal">Drafts</a></li>
-    <li class="bold"><a href="#" class="waves-effect waves-teal">Important</a></li>
-    <li class="bold"><a href="#" class="waves-effect waves-teal">Junk</a></li>
-    <li class="bold"><a href="#" class="waves-effect waves-teal">Trash</a></li>
-    <li class="bold"><a href="#" class="waves-effect waves-teal">Settings</a></li>
-    <li class="bold"><a href="#" class="waves-effect waves-teal">Logout (temporary)</a></li>
-  </ul>
-</div>
+<ul id="nav-mobile" class="side-nav fixed padding-bottom">
+  <li class="logo">
+    <%= link_to root_path, id: "logo-container", class: "brand-logo" do %>
+      <%= image_tag "https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/logo-cloud.png" %>
+    <% end %>
+  </li>
+  <br>
+  <li class="search">
+    <div class="search-wrapper card">
+      <input id="search" placeholder="search"><i class="material-icons">search</i>
+      <div class="search-results"></div>
+    </div>
+  </li>
+  <li class="bold white-text">
+    <%= link_to 'Compose', new_email_path, :class => "btn-large blue white-text" %>
+  </li>
+  <li class="bold"><a href="#" class="waves-effect waves-grey lighten-3">Inbox</a></li>
+  <li class="bold"><a href="#" class="waves-effect waves-teal">To Do</a></li>
+  <li class="bold"><a href="#" class="waves-effect waves-teal">Starred</a></li>
+  <li class="bold"><a href="#" class="waves-effect waves-teal">Sent</a></li>
+  <li class="bold"><a href="#" class="waves-effect waves-teal">Drafts</a></li>
+  <li class="bold"><a href="#" class="waves-effect waves-teal">Important</a></li>
+  <li class="bold"><a href="#" class="waves-effect waves-teal">Junk</a></li>
+  <li class="bold"><a href="#" class="waves-effect waves-teal">Trash</a></li>
+  <li class="bold"><a href="#" class="waves-effect waves-teal">Settings</a></li>
+  <li class="bold">
+    <a class="btn-large blue white-text"><i class="material-icons right white-text">settings</i>Settings</a>
+  </li>
+  <li class="bold">
+    <a class="btn-large blue white-text"><i class="material-icons right white-text">power_settings_new</i>Logout</a>
+  </li>
+</ul>
