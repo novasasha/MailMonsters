@@ -65,13 +65,25 @@ footer.page-footer {
   color: #000000;
 }
 
+
+
+
 /* Login container */
-.login-container {
+.login-wrap {
   background-image: url(backgrounds/login.jpg);
   background-size: 40%;
   background-color: #1681FA;
   background-repeat: repeat-x;
   background-position: bottom;
   height: 100vh;
+}
+
+.logo {
+  width: 50%;
+  min-width: 150px;
+}
+
+.logo-button {
+  text-align: center;
 
 }
