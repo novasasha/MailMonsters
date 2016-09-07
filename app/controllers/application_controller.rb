@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 	  gmail = Gmail.connect(:xoauth2, user.email, user.oauth_token)
   end
 
-  def user_gmail_mail_box(mailbox)
+  def user_gmail_mailbox(mailbox)
   	user_gmail.mailbox(mailbox)
   end
 
