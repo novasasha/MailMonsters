@@ -2,10 +2,11 @@ class EmailsController < ApplicationController
 
   def index
     if current_user != nil
-      if current_user.monster_id == nil
-        redirect_to monster_selector_path
-      end
-      redirect_to inbox_path
+      # if current_user.monster_id == nil
+        # redirect_to monster_selector_path
+      # else
+        redirect_to inbox_path
+      # end
     end
   end
 
