@@ -1,41 +1,10 @@
 class EmailsController < ApplicationController
 
-  def index
-    if current_user != nil
-      if current_user.monster_id == nil
-        redirect_to monster_selector_path
-      else
-        redirect_to inbox_path
-      end
-    end
-  end
-
-  def monster_selector
-  end
-
-  def monster_choice
-    monster = params[:commit].to_i
-    current_user.monster_id = monster
-    current_user.save
-    redirect_to root_path
-  end
-
-  def inbox
+  def mailbox
     @emails = []
-    inbox = user_gmail_mailbox('inbox')
-    @emails = location_emails(inbox)
-  end
-
-  def trash
-    trash = user_gmail_mailbox('trash')
-    @emails = []
-    @emails = location_emails(trash)
-  end
-
-  def junk
-    junk = user_gmail_mailbox('junk')
-    @emails = []
-    @emails = location_emails(junk)
+    location = params[:mailbox]
+    mailbox = user_gmail_mailbox(location)
+    @emails = location_emails(mailbox)
   end
 
   def email
