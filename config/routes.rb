@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 	get 'auth/:provider/callback', to: 'sessions#create'
 	get 'auth/failure', to: redirect('/')
 	get 'signout', to: 'sessions#destroy', as: 'signout'
+	get 'inbox', to: 'monsters#inbox', as: 'inbox'
+	get 'monster_selector', to: 'monsters#monster_selector', as: 'monster_selector'
 	get 'trash', to: 'monsters#trash', as: 'trash'
 	get 'junk', to: 'monsters#junk', as: 'junk'
 	get 'email/compose', to: 'monsters#compose', as: 'new_email'

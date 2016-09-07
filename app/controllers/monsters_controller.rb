@@ -2,30 +2,37 @@ class MonstersController < ApplicationController
 
   def index
     if current_user != nil
+      if current_user.monster_id == nil
+        monster_selector_path
+      end
+      redirect_to inbox_path
     end
+  end
+
+  def monster_selector
   end
 
   def inbox
     @emails = []
-    inbox = user_gmail_location('inbox')
+    inbox = user_gmail_mail_box('inbox')
     @emails = location_emails(inbox)
   end
 
   def trash
-    trash = user_gmail_location('trash')
+    trash = user_gmail_mail_box('trash')
     @emails = []
     @emails = location_emails(trash)
   end
 
   def junk
-    junk = user_gmail_location('junk')
+    junk = user_gmail_mail_box('junk')
     @emails = []
     @emails = location_emails(junk)
   end
 
   def email
     index_number = params[:id].to_i
-    inbox = user_gmail_location('inbox')
+    inbox = user_gmail_mail_box('inbox')
     @email = location_emails(inbox)[index_number]
     render :email
   end

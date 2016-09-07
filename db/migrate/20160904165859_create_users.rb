@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :oauth_token
       t.string :oauth_refresh_token
       t.datetime :oauth_expires_at
+      t.integer :monster_id
 
       t.timestamps
     end
