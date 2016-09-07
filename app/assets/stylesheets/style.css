@@ -74,7 +74,7 @@ footer.page-footer {
 
 /* Login container */
 .login-wrap {
-  background-image: url(backgrounds/login.jpg);
+  background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/login.jpg);
   background-size: 40%;
   background-color: #1681FA;
   background-repeat: repeat-x;
