@@ -2,25 +2,25 @@ class EmailsController < ApplicationController
 
   def inbox
     @emails = []
-    inbox = user_gmail_mail_box('inbox')
+    inbox = user_gmail_mailbox('inbox')
     @emails = location_emails(inbox)
   end
 
   def trash
-    trash = user_gmail_mail_box('trash')
+    trash = user_gmail_mailbox('trash')
     @emails = []
     @emails = location_emails(trash)
   end
 
   def junk
-    junk = user_gmail_mail_box('junk')
+    junk = user_gmail_mailbox('junk')
     @emails = []
     @emails = location_emails(junk)
   end
 
   def email
     index_number = params[:id].to_i
-    inbox = user_gmail_mail_box('inbox')
+    inbox = user_gmail_mailbox('inbox')
     @email = location_emails(inbox)[index_number]
     render :email
   end
