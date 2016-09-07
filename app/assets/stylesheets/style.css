@@ -64,3 +64,14 @@ footer.page-footer {
 .black {
   color: #000000;
 }
+
+/* Login container */
+.login-container {
+  background-image: url(backgrounds/login.jpg);
+  background-size: 40%;
+  background-color: #1681FA;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  height: 100vh;
+
+}
