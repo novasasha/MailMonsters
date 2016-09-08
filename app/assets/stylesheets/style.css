@@ -80,7 +80,7 @@ footer.page-footer {
   height: 100vh;
 }
 
-.logo {
+.logo-pic {
   width: 50%;
   min-width: 150px;
 }
@@ -111,5 +111,63 @@ li.search{position:absolute;left:0;right:0;top:135px;margin-top:1px;padding:1px 
 
 li.logo{text-align:center;margin-top:0px;margin-bottom:112px}ul.side-nav.fixed li.logo:hover,ul.side-nav.fixed li.logo #logo-container:hover{background-color:transparent}
 
-nav.top-nav{height:300px;box-shadow:none}nav.top-nav a.page-title{line-height:122px;font-size:48px}a.button-collapse.top-nav{position:absolute;text-align:center;height:48px;width:48px;left:7.5%;top:0;float:none;margin-left:1.5rem;color:#fff;font-size:36px;z-index:2}a.button-collapse.top-nav.full{line-height:122px}a.button-collapse.top-nav i{font-size:32px}
+nav.top-nav{height:380px;box-shadow:none}nav.top-nav a.page-title{line-height:122px;font-size:48px}a.button-collapse.top-nav{position:absolute;text-align:center;height:48px;width:48px;left:7.5%;top:0;float:none;margin-left:1.5rem;color:#fff;font-size:36px;z-index:2}a.button-collapse.top-nav.full{line-height:122px}a.button-collapse.top-nav i{font-size:32px}
 @media only screen and (max-width: 600px){a.button-collapse.top-nav{left:5%}}@media only screen and (max-width: 992px){nav .nav-wrapper{text-align:center}nav .nav-wrapper a.page-title{font-size:36px}}@media only screen and (min-width: 993px){.container{width:85%}
+
+header {
+  /*border: 1px solid blue;*/
+}
+.top-nav {
+  background-color: transparent;
+}
+.nav-wrapper {
+  background-color: transparent;
+}
+/* MONSTER AREA */
+main {
+  display: block;
+}
+.monster-background {
+  float: right;
+  width: 100%;
+  background-color: transparent;
+  /*border: 1px solid green;*/
+}
+.dragon {
+  float: right;
+  width: 100%;
+  background-color: transparent;
+  /*border: 1px solid green;*/
+  background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/sakura-bg.png);
+  background-repeat: repeat-x;
+}
+.chicken {
+  float: right;
+  width: 100%;
+  background-color: transparent;
+  /*border: 1px solid green;*/
+  background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/cookie-mountain.png);
+  background-repeat: repeat-x;
+}
+.cat {
+  float: right;
+  width: 100%;
+  background-color: transparent;
+  /*border: 1px solid green;*/
+  background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/high-mountain.png);
+  background-repeat: repeat-x;
+}
+.bird {
+  float: right;
+  width: 100%;
+  background-color: transparent;
+  /*border: 1px solid green;*/
+  background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/morning-park.png);
+  background-repeat: repeat-x;
+}
+.monster-background img {
+  float: right;
+  /*border: 1px solid red;*/
+  /*width: 100%;*/
+  /*height: 380px;*/
+}

@@ -25,29 +25,41 @@
     <div id='app-area'>
       <% if current_user %>
         <% if current_user.monster_id != nil %>
+        <header>
           <nav class="top-nav">
-            <div class="container">
+            <!-- <div class="container"> -->
               <div class="nav-wrapper">
-                <div class='monster-background'>
-                  <%= image_tag(Monster.find(current_user.monster_id).background) %>
-                  <div>
-                    <%= image_tag(reaction(Monster.find(current_user.monster_id))) %>
+                <div class="monster-background">
+                <!-- <% if current_user.monster_id == 1 %>
+                <div class="dragon">
+                <% elsif current_user.monster_id == 2 %>
+                <div class="cat">
+                <% elsif current_user.monster_id == 3 %>
+                <div class="chicken">
+                <% elsif current_user.monster_id == 4 %>
+                <div class="bird">
+                <% end %> -->
+                  <!-- <%= image_tag(Monster.find(current_user.monster_id).background) %> -->
+                  <div class="monster-place">
+                    <!-- <%= image_tag(reaction(Monster.find(current_user.monster_id))) %> -->
+                    <p>
+                      monster here
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
+            <!-- </div> -->
           </nav>
           <div class="container">
             <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a>
           </div>
           <!-- render navigation partial -->
           	<%= render "layouts/nav" %>
+        </header>
           <!-- render mailbox -->
-            <!-- container -->
-
-            <%= yield %>
-
-            <!-- container -->
+            <main>
+              <%= yield %>
+            </main>
         <% else %>
           <!-- render monster selector -->
           <h1>I dont have a monster</h1>
