@@ -10,9 +10,8 @@ class EmailsController < ApplicationController
   def mailbox
     @emails = []
     mailbox = params[:mailbox]
-    @emails = user_gmail_recent(mailbox)
-    email_count = @emails.length
-    # @emails = location_emails(mailbox)
+    location = user_gmail_mailbox(mailbox)
+    @emails = location_emails(location)
   end
 
 # open a clicked on email
