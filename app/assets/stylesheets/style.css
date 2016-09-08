@@ -96,12 +96,36 @@ footer.page-footer {
   width: 20%;
 }
 
+
+/* NAV BAR */
+.nav-logo {
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+#nav-mobile {
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Custom Styles */
 .padding-bottom {
   padding-bottom: 100px;
 }
 .logo img {
   width: 150px;
+
 }
 
 /* Styles from actual Materialize website*/
