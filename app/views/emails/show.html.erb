@@ -1,25 +1,19 @@
 <div class="container">
-
-  <div>
-  	<%= sender_name(@email)[0] %>
-  	<%= sender_email_address(@email) %>
+	<div class="email-info row">
+	<h5>
+  	<%= sender_name(@email)[0] %><br />
+		to me</br>
+  	<%= sender_email_address(@email) %><br />
   	<%= email_recieved_date(@email) %>
-  	<div>
-      <%= button_to "delete", email_delete_path(params[:id]), :method => :delete %>
+	</h5>
+      <%= button_to "delete", email_delete_path(params[:id]), :method => :delete, class: "waves-effect waves-teal btn-flat"%>
     </div>
   </div>
-  
-  <br>
-  <div>
-  	<%= email_subject(@email) %>
-  </div>
-
-  <br>
-
-  <div>
-  	<%= email_text_body(@email) %>
-  </div>
-
+	<div class="email-content">
+		<h4><%= email_subject(@email) %></h4>
+		<p class="flow-text">
+			<%= email_text_body(@email) %>
+	</div>
+		</div>
+	</div>
 </div>
-
-	

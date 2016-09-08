@@ -90,14 +90,13 @@ footer.page-footer {
 /* NAV BAR */
 .nav-logo {
   margin: 0 auto;
-  border: 1px solid red;
 }
 
 #nav-mobile {
   margin: 0 auto;
 }
 
-
+/* SINGLE EMAIL PAGE */
 
 
 
@@ -162,7 +161,4 @@ header {
 /* Emails */
 #email-area {
   border: 1px solid red;
-}
-main {
-  display: block;
 }
