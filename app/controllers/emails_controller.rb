@@ -1,9 +1,9 @@
 class EmailsController < ApplicationController
 
-  #displays search results NOT SURE WHERE TO DISPLAY RESULTS
+  #displays search results
   def search
     if current_user != nil
-    query = params[:query]
+    query = params[:search]
     @emails = user_gmail.inbox.emails(gm: query)
     else
       redirect_to root_path

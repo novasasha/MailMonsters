@@ -10,7 +10,8 @@
   <li class="search">
     <div class="search-wrapper card">
       <%= form_tag("/search", method: "get") do %>
-        <input id="search" placeholder="Search inbox..."><i class="material-icons">search</i>
+        <input id="search" placeholder="Search inbox..." name="search">
+        <i class="material-icons">search</i>
       <% end %>
       <div class="search-results"></div>
     </div>
