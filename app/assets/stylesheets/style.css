@@ -86,12 +86,36 @@ footer.page-footer {
   width: 20%;
 }
 
+
+/* NAV BAR */
+.nav-logo {
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+#nav-mobile {
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Custom Styles */
 .padding-bottom {
   padding-bottom: 100px;
 }
 .logo img {
   width: 150px;
+
 }
 
 /* Styles from actual Materialize website*/
@@ -101,7 +125,7 @@ li.search{position:absolute;left:0;right:0;top:135px;margin-top:1px;padding:1px 
 
 li.logo{text-align:center;margin-top:0px;margin-bottom:112px}ul.side-nav.fixed li.logo:hover,ul.side-nav.fixed li.logo #logo-container:hover{background-color:transparent}
 
-nav.top-nav{height:380px;box-shadow:none}nav.top-nav a.page-title{line-height:122px;font-size:48px}a.button-collapse.top-nav{position:absolute;text-align:center;height:48px;width:48px;left:7.5%;top:0;float:none;margin-left:1.5rem;color:#fff;font-size:36px;z-index:2}a.button-collapse.top-nav.full{line-height:122px}a.button-collapse.top-nav i{font-size:32px}
+nav.top-nav{height:0px;box-shadow:none}nav.top-nav a.page-title{line-height:122px;font-size:48px}a.button-collapse.top-nav{position:absolute;text-align:center;height:48px;width:48px;left:7.5%;top:0;float:none;margin-left:1.5rem;color:#fff;font-size:36px;z-index:2}a.button-collapse.top-nav.full{line-height:122px}a.button-collapse.top-nav i{font-size:32px}
 @media only screen and (max-width: 600px){a.button-collapse.top-nav{left:5%}}@media only screen and (max-width: 992px){nav .nav-wrapper{text-align:center}nav .nav-wrapper a.page-title{font-size:36px}}@media only screen and (min-width: 993px){.container{width:85%}
 
 header {
@@ -113,32 +137,32 @@ header {
 .nav-wrapper {
   background-color: transparent;
 }
+
 /* MONSTER AREA */
-main {
-  display: block;
+#monster-area {
 }
 .monster-background {
-  /*float: right;*/
-  width: 100%;
   height: 380px;
+  max-height: 380px;
   background-color: transparent;
   background-repeat: repeat-x;
-  /*border: 1px solid red;*/
 }
 .monster-place {
-  /*float: right;*/
-  width: 30%;
-  height: 100%;
+  width: 20%;
   margin: 0 auto;
-  border: 1px solid green;
+  margin-left: 650px;
+  padding-top: 100px;
 }
 .monster-place img {
-  /*float: right;*/
-  width: 100%;
+  width: 60%;
   margin: 0 auto;
+  vertical-align: middle;
 }
 
 /* Emails */
 #email-area {
   border: 1px solid red;
+}
+main {
+  display: block;
 }

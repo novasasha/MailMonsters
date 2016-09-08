@@ -1,7 +1,9 @@
 <ul id="nav-mobile" class="side-nav fixed padding-bottom">
   <li class="logo">
     <%= link_to root_path, id: "logo-container", class: "brand-logo" do %>
+    <div class="nav-logo">
       <%= image_tag "https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/logo-cloud.png" %>
+    </div>
     <% end %>
   </li>
   <br>
@@ -18,7 +20,7 @@
     <%= link_to 'Compose', new_email_path, :class => "btn-large blue white-text" %>
   </li>
   <li class="bold"><a href="/inbox" class="waves-effect waves-grey lighten-3">Inbox</a></li>
-  <li class="bold"><a href="/starred" class="waves-effect waves-teal">Starred</a></li>
+  <li class="bold"><a href="/todo" class="waves-effect waves-teal">To Do</a></li>
   <li class="bold"><a href="/sent" class="waves-effect waves-teal">Sent</a></li>
   <li class="bold"><a href="/drafts" class="waves-effect waves-teal">Drafts</a></li>
   <li class="bold"><a href="/important" class="waves-effect waves-teal">Important</a></li>
