@@ -29,19 +29,7 @@
           <nav class="top-nav">
             <!-- <div class="container"> -->
               <div class="nav-wrapper">
-                <% if current_user.monster_id == 1 %>
-                  <div class="monster-background" style="background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/sakura-bg.png);">
-                <% elsif current_user.monster_id == 2 %>
-                  <div class="monster-background" style="background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/high-mountain.png);">
-                <% elsif current_user.monster_id == 3 %>
-                  <div class="monster-background" style="background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/cookie-mountain.png);">
-                <% elsif current_user.monster_id == 4 %>
-                  <div class="monster-background" style="background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/morning-park.png);">
-                <% end %>
-                  <div class="monster-place">
-                    <%= image_tag(reaction(Monster.find(current_user.monster_id))) %>
-                  </div>
-                </div> <!-- closing div for monster background -->
+                <!-- sing div for monster background -->
               </div>
             <!-- </div> -->
           </nav>
@@ -52,9 +40,24 @@
           	<%= render "layouts/nav" %>
         </header>
           <!-- render mailbox -->
-            <main>
-              <%= yield %>
-            </main>
+          <section id="monster-area">
+            <% if current_user.monster_id == 1 %>
+              <div class="monster-background" style="background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/sakura-bg.png);">
+            <% elsif current_user.monster_id == 2 %>
+              <div class="monster-background" style="background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/high-mountain.png);">
+            <% elsif current_user.monster_id == 3 %>
+              <div class="monster-background" style="background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/cookie-mountain.png);">
+            <% elsif current_user.monster_id == 4 %>
+              <div class="monster-background" style="background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/morning-park.png);">
+            <% end %>
+              <div class="monster-place">
+                <%= image_tag(reaction(Monster.find(current_user.monster_id))) %>
+              </div>
+            </div>
+          </section>
+          <main>
+            <%= yield %>
+          </main>
         <% else %>
           <!-- render monster selector -->
           <h1>I dont have a monster</h1>
