@@ -6,6 +6,8 @@ class EmailsController < ApplicationController
     location = params[:mailbox]
     mailbox = user_gmail_mailbox(location)
     @emails = location_emails(mailbox)
+    puts "--------------------------------"
+    p list_all_labels
   end
 
 # open a clicked on email
@@ -20,7 +22,7 @@ class EmailsController < ApplicationController
   def new
   end
 
-# sends the email 
+# sends the email
   def create
     email_address = params[:address]
     email_subject = params[:subject]
