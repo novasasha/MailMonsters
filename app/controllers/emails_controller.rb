@@ -9,8 +9,8 @@ class EmailsController < ApplicationController
 # open a mail depending on what is supplied to as params eg inbox, trash junk
   def mailbox
     @emails = []
-    mailbox = params[:mailbox]
-    @emails = user_gmail_recent(mailbox)
+    @mailbox = params[:mailbox]
+    @emails = user_gmail_recent(@mailbox)
     email_count = @emails.length
     # @emails = location_emails(mailbox)
   end

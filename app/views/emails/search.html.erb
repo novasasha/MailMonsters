@@ -1,31 +1,6 @@
 <div class="container">
-	<h1>Mailbox file</h1>
+	<h1><%= @mailbox %> Results</h1>
 </div>
 <div id='email-area'>
-	<ul class="collection">
-	  <% i = (@emails.length) - 1 %>
-	  <% until i < 0 %>
-	  <li class="collection-item">
-	    <table>
-	        <tr class='email-information'>
-	          <td><a href='<%= show_email_path('inbox',i) %>'><%= sender_name(@emails[i])[0] %></a></td>
-	          <td>
-
-	            <a href='<%= show_email_path(inbox ,i) %>'>
-	            <span><%= email_subject(@emails[i]) %></span>
-
-	              <span><% email_text_body(@emails[i]) %></span>
-	              </a>
-	          </td>
-	            <td>
-	              <a href='<%= show_email_path(inbox ,i) %>'>
-	              <%= email_recieved_date(@emails[i])%>
-	              </a>
-	            </td>
-	        </tr>
-	    </table>
-	  </li>
-	  <% i -= 1 %>
-	  <% end %>
-	</ul>
+		<%= render "emails/emails" %>
 </div>
