@@ -23,56 +23,31 @@
   </head>
   <body>
     <div id='app-area'>
-      <!-- Insert Materialize template -->
-      <% if current_user && current_user.monster_id != nil %>
-        <nav class="white" role="navigation">
-          <div class="nav-wrapper container">
-            <!-- <a id="logo-container" href="#" class="brand-logo">Logo</a> -->
-            <ul class="right hide-on-med-and-down">
-              <!-- <li><a href="#"><%= current_user.name %>' Inbox</a></li> -->
-              <li><%= link_to 'Compose', new_email_path %></li>
-              <li><a href="#">Inbox</a></li>
-              <li><a href="#">To Do</a></li>
-              <li><a href="#">Starred</a></li>
-              <li><a href="#">Sent</a></li>
-              <li><a href="#">Drafts</a></li>
-              <li><a href="#">Junk</a></li>
-              <li><a href="#">Trash</a></li>
-              <li><a href="#">Settings</a></li>
-              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
-            </ul>
-
-            <ul id="nav-mobile" class="side-nav">
-              <li><a href="#"><%= current_user.name %>' Inbox</a></li>
-              <li><%= link_to 'Compose', new_email_path %></li>
-              <li><a href="#">Inbox</a></li>
-              <li><a href="#">To Do</a></li>
-              <li><a href="#">Starred</a></li>
-              <li><a href="#">Sent</a></li>
-              <li><a href="#">Drafts</a></li>
-              <li><a href="#">Junk</a></li>
-              <li><a href="#">Trash</a></li>
-              <li><a href="#">Settings</a></li>
-              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      <% if current_user %>
+        <% if current_user.monster_id != nil %>
+          <nav class="top-nav">
+            <div class="container">
+              <div class="nav-wrapper">
+                <a class="page-title">Color</a>
+              </div>
+            </div>
+          </nav>
+          <div class="container">
+            <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a>
           </div>
-        </nav>
-        <!-- container -->
-          <%= yield %>
-        <!-- container -->
-          <% elsif current_user && current_user.monster_id == nil %>
-        <!-- container -->
-          <%= yield %>
-        <!-- container -->
-
+          <!-- render navigation partial -->
+          	<%= render "layouts/nav" %>
+          <!-- render mailbox -->
+            <!-- container -->
+            <h1>Yeild goes here</h1>
+            <!-- container -->
+        <% else %>
+          <!-- render monster selector -->
+          <h1>I dont have a monster</h1>
+        <% end %>
       <% else %>
         <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
       <% end %>
     </div>
-    <!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="js/materialize.js"></script>
-<script src="js/init.js"></script>
-</body>
+  </body>
 </html>
