@@ -28,7 +28,12 @@
           <nav class="top-nav">
             <div class="container">
               <div class="nav-wrapper">
-                <a class="page-title">Color</a>
+                <div class='monster-background'>
+                  <%= image_tag(Monster.find(current_user.monster_id).background) %>
+                  <div>
+                    <%= image_tag(Monster.find(current_user.monster_id).positive_reactions[0]) %>
+                  </div>
+                </div>
               </div>
             </div>
           </nav>
@@ -39,7 +44,7 @@
           	<%= render "layouts/nav" %>
           <!-- render mailbox -->
             <!-- container -->
-            <h1>Yeild goes here</h1>
+            <%= yield %>
             <!-- container -->
         <% else %>
           <!-- render monster selector -->
