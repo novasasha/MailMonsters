@@ -1,13 +1,18 @@
 class EmailsController < ApplicationController
 
+  #displays search results NOT SURE WHERE TO DISPLAY RESULTS
+  def search
+    query = params[:query]
+    @emails = user_gmail.inbox.emails(gm: query)
+  end
+
 # open a mail depending on what is supplied to as params eg inbox, trash junk
   def mailbox
     @emails = []
-    location = params[:mailbox]
-    mailbox = user_gmail_mailbox(location)
-    @emails = location_emails(mailbox)
-    puts "--------------------------------"
-    p list_all_labels
+    mailbox = params[:mailbox]
+    @emails = user_gmail_recent(mailbox, 2)
+    email_count = @emails.length
+    # @emails = location_emails(mailbox)
   end
 
 # open a clicked on email
@@ -21,6 +26,7 @@ class EmailsController < ApplicationController
 # links to a page to create a email
   def new
   end
+
 
 # sends the email
   def create
