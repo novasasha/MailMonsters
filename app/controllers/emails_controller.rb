@@ -10,7 +10,7 @@ class EmailsController < ApplicationController
   def mailbox
     @emails = []
     mailbox = params[:mailbox]
-    @emails = user_gmail_recent(mailbox, 2)
+    @emails = user_gmail_recent(mailbox)
     email_count = @emails.length
     # @emails = location_emails(mailbox)
   end

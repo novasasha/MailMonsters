@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 	post '/monster_choice', to: 'monsters#monster_choice'
 
 	#these handle searches
-	get 'search', to: 'emails#search'
+	get ':mailbox/search', to: 'emails#search'
+
 
 	# this leads to a specified mailbox eg. inbox, trash, junk, starred, etc.
 	get ':mailbox', to: 'emails#mailbox', as: 'index'
