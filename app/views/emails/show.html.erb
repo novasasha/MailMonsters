@@ -1,36 +1,48 @@
 <div>
 	<%= link_to "Indox", root_path %>
 	<%= button_to "delete", email_delete_path(params[:id]), :method => :delete %>
-</div>	
+</div>
 
 <div class="container">
+<div class="single-email-wrap">
+	<div>
+		<h5>
+			<%= sender_name(@email)[0] %><br />
+			to me<br />
+			<%= sender_email_address(@email) %><br />
+			<%= email_recieved_date(@email) %>
+		</h5>
+		<div class="dropdown">
+			<div class="dropdown-content">
+				<% list_all_labels.each do |label| %>
+				<% unless !!label.match(/(\[Gmail\])/) || label == 'INBOX' %>
+				<form action="index.html" method="post">
+					<input type="submit" name="label" value="<%= label %>">
+				</form>
+				<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div>
+		<h4><%= email_subject(@email) %></h4>
+	</div>
+	<br>
+	<div>
 
-<div>
-	<%= sender_name(@email)[0] %>
-	<%= sender_email_address(@email) %>
-	<%= email_recieved_date(@email) %>
-	<div class="dropdown">
-  <button class="dropbtn">Apply a Label</button>
-  <div class="dropdown-content">
-    <% list_all_labels.each do |label| %>
-      <% unless !!label.match(/(\[Gmail\])/) || label == 'INBOX' %>
-        <form action="index.html" method="post">
-          <input type="submit" name="label" value="<%= label %>">
-        </form>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-</div>
-<br>
-<div>
-	<%= email_subject(@email) %>
-</div>
-<br>
-<div>
-	<%= email_text_body(@email) %>
+	<div class="row">
+		<div class="col s12 m5">
+			<div class="card-panel white">
+				<p class="flow-text">
+					<%= email_text_body(@email) %>
+				</p>
+		</div>
+	</div>
 </div>
 
-</div>
 
-	
+	</div>
+
+	</div>
+</div>
