@@ -80,7 +80,7 @@ class ApplicationController < ActionController::Base
   end
 
   def reaction(monster)
-    if unread_message_check && junk_check && to_do_check
+    if unread_message_check #&& junk_check && to_do_check
       monster.positive_reactions.sample
     else
       monster.negative_reactions.sample
@@ -91,15 +91,15 @@ class ApplicationController < ActionController::Base
     user_gmail.inbox.count(:unread) < 10
   end
 
-  def junk_check
-    user_gmail.mailbox('junk').count < 10
-  end
+  # def junk_check
+  #   user_gmail.mailbox('junk').count < 10
+  # end
 
-  def to_do_check
-    if !user_gmail.labels.all.include?('todo')
-      true
-    else
-      user_gmail.label('todo').emails.count < current_user.to_do_limit
-    end
-  end
+  # def to_do_check
+  #   if !user_gmail.labels.all.include?('todo')
+  #     true
+  #   else
+  #     user_gmail.label('todo').emails.count < current_user.to_do_limit
+  #   end
+  # end
 end
