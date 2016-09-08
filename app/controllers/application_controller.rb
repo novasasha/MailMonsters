@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :user_gmail, :user_gmail_inbox, :sender_name, :sender_email_address, :email_subject, :email_recieved_date, :email_text_body, :list_all_labels, :create_label, :delete_label, :apply_label, :create_and_apply_label
+  helper_method :current_user, :user_gmail, :user_gmail_inbox, :sender_name, :sender_email_address, :email_subject, :email_recieved_date, :email_text_body, :list_all_labels, :create_label, :delete_label, :apply_label, :create_and_apply_label, :reaction, :unread_message_check, :junk_check, :to_do_check
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -61,5 +61,25 @@ class ApplicationController < ActionController::Base
 
   def create_and_apply_label(email, label)
     email.label!(label)
+  end
+
+  def reaction(monster)
+    if unread_message_check && junk_check && to_do_check
+      monster.positive_reactions.sample
+    else
+      monster.negative_reactions.sample
+    end
+  end
+
+  def unread_message_check
+    true
+  end
+
+  def junk_check
+    true
+  end
+
+  def to_do_check
+    true
   end
 end
