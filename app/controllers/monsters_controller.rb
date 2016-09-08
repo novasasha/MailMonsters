@@ -4,6 +4,8 @@ class MonstersController < ApplicationController
   def index
     if current_user != nil
       redirect_to "/inbox"
+      puts "--------------------------------"
+      p list_all_labels
     end
   end
 
