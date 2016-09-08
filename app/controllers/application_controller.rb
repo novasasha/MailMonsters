@@ -16,6 +16,18 @@ class ApplicationController < ActionController::Base
   	user_gmail.mailbox(mailbox)
   end
 
+  #Displays emails from the last two weeks. The time_shift shifts that back another two weeks every time it's incremented by one
+  def user_gmail_recent(mailbox, time_shift = 1)
+    two_weeks_ago = Date.today - 15
+    if time_shift = 1
+      user_gmail.mailbox(mailbox).find(:after => two_weeks_ago)
+    else
+      start_date = two_weeks_ago - 15 * time_shift
+      end_date = Date.today - 15 * time_shift
+      user_gmail.mailbox(mailbox).find(:after => start_date, :before => end_date)
+    end
+  end
+
   def location_emails(mailbox)
   	mailbox.emails
   end
@@ -40,7 +52,11 @@ class ApplicationController < ActionController::Base
   end
 
   def email_text_body(email)
-  	email.message.text_part.body.decoded
+    if email.message.text_part
+  	   email.message.text_part.body.decoded
+    else
+      ""
+    end
   end
 
   def list_all_labels
@@ -72,14 +88,18 @@ class ApplicationController < ActionController::Base
   end
 
   def unread_message_check
-    true
+    user_gmail.inbox.count(:unread) < 10
   end
 
   def junk_check
-    true
+    user_gmail.mailbox('junk').count < 10
   end
 
   def to_do_check
-    true
+    if !user_gmail.labels.all.include?('todo')
+      true
+    else
+      user_gmail.label('todo').emails.count > current_user.to_do_limit
+    end
   end
 end
