@@ -1,48 +1,25 @@
-<div>
-	<%= link_to "Indox", root_path %>
-	<%= button_to "delete", email_delete_path(params[:id]), :method => :delete %>
-</div>
-
 <div class="container">
-<div class="single-email-wrap">
-	<div>
 		<h5>
-			<%= sender_name(@email)[0] %><br />
-			to me<br />
-			<%= sender_email_address(@email) %><br />
-			<%= email_recieved_date(@email) %>
-		</h5>
-		<div class="dropdown">
-			<div class="dropdown-content">
-				<% list_all_labels.each do |label| %>
-				<% unless !!label.match(/(\[Gmail\])/) || label == 'INBOX' %>
-				<form action="index.html" method="post">
-					<input type="submit" name="label" value="<%= label %>">
-				</form>
-				<% end %>
-				<% end %>
-			</div>
-		</div>
-	</div>
-	<br>
-	<div>
+  	<%= sender_name(@email)[0] %><br />
+		to me</br>
+  	<%= sender_email_address(@email) %><br />
+  	<%= email_recieved_date(@email) %>
+	</h5>
+      <%= button_to "delete", email_delete_path(params[:id]), :method => :delete, class: "waves-effect waves-teal btn-flat"%>
+    </div>
+  </div>
+  <br>
+  <div>
 		<h4><%= email_subject(@email) %></h4>
-	</div>
-	<br>
-	<div>
-
+  </div>
+  <br>
 	<div class="row">
 		<div class="col s12 m5">
 			<div class="card-panel white">
 				<p class="flow-text">
 					<%= email_text_body(@email) %>
 				</p>
+			</div>
 		</div>
-	</div>
-</div>
-
-
-	</div>
-
 	</div>
 </div>
