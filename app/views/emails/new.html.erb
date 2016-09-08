@@ -1,6 +1,7 @@
-<%= form_tag "/send" do%>
-	<%= label_tag 'to'%>
-	<%= email_field_tag :address %>
+<div>
+	<%= form_tag "/create" do%>
+		<%= label_tag 'to'%>
+		<%= email_field_tag :address %>
 
 	<%= label_tag 'subject'%>
 	<%= text_field_tag :subject %>
