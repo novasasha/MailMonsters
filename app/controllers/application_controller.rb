@@ -99,7 +99,7 @@ class ApplicationController < ActionController::Base
     if !user_gmail.labels.all.include?('todo')
       true
     else
-      user_gmail.label('todo').emails.count > current_user.to_do_limit
+      user_gmail.label('todo').emails.count < current_user.to_do_limit
     end
   end
 end
