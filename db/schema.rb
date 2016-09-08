@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20160907212125) do
   enable_extension "plpgsql"
 
   create_table "monsters", force: :cascade do |t|
+    t.string   "name"
     t.text     "positive_reactions"
     t.text     "negative_reactions"
     t.text     "background"
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160907212125) do
     t.string   "oauth_refresh_token"
     t.datetime "oauth_expires_at"
     t.integer  "monster_id"
+    t.integer  "to_do_limit"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end

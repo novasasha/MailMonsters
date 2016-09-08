@@ -13,9 +13,9 @@ class MonstersController < ApplicationController
 
 # saves the monster as the users choice
   def monster_choice
-    monster = params[:commit].to_i
-    # current_user.monster_id = monster
-    # current_user.save
+    monster_object = Monster.find_by name: params[:commit]
+    current_user.monster_id = monster_object.id
+    current_user.save
     redirect_to root_path
   end
 end
