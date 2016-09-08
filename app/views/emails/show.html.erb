@@ -1,5 +1,6 @@
 <div class="container">
-		<h5>
+	<div class="email-info row">
+	<h5>
   	<%= sender_name(@email)[0] %><br />
 		to me</br>
   	<%= sender_email_address(@email) %><br />
@@ -8,20 +9,11 @@
       <%= button_to "delete", email_delete_path(params[:id]), :method => :delete, class: "waves-effect waves-teal btn-flat"%>
     </div>
   </div>
-
-  <br>
-  <div>
+	<div class="email-content">
 		<h4><%= email_subject(@email) %></h4>
-  </div>
-
-  <br>
-	<div class="row">
-		<div class="col s12 m5">
-			<div class="card-panel white">
-				<p class="flow-text">
-					<%= email_text_body(@email) %>
-				</p>
-			</div>
+		<p class="flow-text">
+			<%= email_text_body(@email) %>
+	</div>
 		</div>
 	</div>
 </div>

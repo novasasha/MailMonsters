@@ -88,8 +88,7 @@ class ApplicationController < ActionController::Base
   end
 
   def unread_message_check
-    # user_gmail.inbox.count(:unread) < 10
-    false
+    user_gmail.inbox.count(:unread) < 10
   end
 
   # def junk_check

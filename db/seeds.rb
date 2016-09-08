@@ -16,15 +16,15 @@ background: 'https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/b
 
 cat = {
 name: 'cat',
-positive_reactions:  ['https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/Cat/cat-flying.gif'],
-negative_reactions: ['https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/Cat/cat-yelling.gif',  'https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/Cat/cat-faint.gif',  'https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/Cat/cat-dizzy.gif'],
+positive_reactions:  ['https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/resized-gifs/cat-flying.gif'],
+negative_reactions: ['https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/resized-gifs/cat-yelling.gif',  'https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/resized-gifs/cat-faint.gif',  'https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/resized-gifs/cat-dizzy.gif '],
 background: 'https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/high-mountain.png'
 }
 
 chicken = {
 name: 'chicken',
-positive_reactions:  ['https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/Chicken/chicken-flying.gif'],
-negative_reactions: ['https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/Chicken/chicken-attack.gif',   'https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/Chicken/chicken-surprised.gif'],
+positive_reactions:  ['https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/resized-gifs/chicken-flying.gif'],
+negative_reactions: ['https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/resized-gifs/chicken-attack.gif', 'https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/resized-gifs/chicken-surprised.gif'],
 background: 'https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/cookie-mountain.png'
 }
 
