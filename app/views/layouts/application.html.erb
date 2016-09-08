@@ -31,7 +31,7 @@
                 <div class='monster-background'>
                   <%= image_tag(Monster.find(current_user.monster_id).background) %>
                   <div>
-                    <%= image_tag(Monster.find(current_user.monster_id).positive_reactions[0]) %>
+                    <%= image_tag(reaction(Monster.find(current_user.monster_id))) %>
                   </div>
                 </div>
               </div>

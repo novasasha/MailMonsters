@@ -5,4 +5,5 @@ class Monster < ApplicationRecord
   serialize :positive_reactions,Array
   serialize :negative_reactions,Array
 
+  
 end
