@@ -62,4 +62,24 @@ class ApplicationController < ActionController::Base
   def create_and_apply_label(email, label)
     email.label!(label)
   end
+
+  def reaction(monster)
+    if unread_message_check && junk_check && to_do_check
+      monster.positive_reactions.sample
+    else
+      monster.negative_reactions.sample
+    end
+  end
+
+  def unread_message_check
+    true
+  end
+
+  def junk_check
+    true
+  end
+
+  def to_do_check
+    true
+  end
 end
