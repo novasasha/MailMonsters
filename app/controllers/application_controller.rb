@@ -18,12 +18,12 @@ class ApplicationController < ActionController::Base
 
   #Displays emails from the last two weeks. The time_shift shifts that back another two weeks every time it's incremented by one
   def user_gmail_recent(mailbox, time_shift = 1)
-    two_weeks_ago = Date.today - 15
+    two_weeks_ago = Date.today - 14
     if time_shift = 1
       user_gmail.mailbox(mailbox).find(:after => two_weeks_ago)
     else
-      start_date = two_weeks_ago - 15 * time_shift
-      end_date = Date.today - 15 * time_shift
+      start_date = two_weeks_ago - 14 * time_shift
+      end_date = Date.today - 14 * time_shift
       user_gmail.mailbox(mailbox).find(:after => start_date, :before => end_date)
     end
   end
