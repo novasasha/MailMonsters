@@ -25,20 +25,8 @@
     <div id='app-area'>
       <% if current_user %>
         <% if current_user.monster_id != nil %>
-        <header>
-          <nav class="top-nav">
-            <!-- <div class="container"> -->
-              <div class="nav-wrapper">
-                <!-- sing div for monster background -->
-              </div>
-            <!-- </div> -->
-          </nav>
-          <div class="container">
-            <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a>
-          </div>
-          <!-- render navigation partial -->
-          	<%= render "layouts/nav" %>
-        </header>
+
+        <%= render "layouts/nav" %>
           <!-- render mailbox -->
           <section id="monster-area">
             <% if current_user.monster_id == 1 %>
