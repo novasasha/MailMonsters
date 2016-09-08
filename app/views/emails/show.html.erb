@@ -8,11 +8,14 @@
       <%= button_to "delete", email_delete_path(params[:id]), :method => :delete %>
     </div>
   </div>
+  
   <br>
   <div>
   	<%= email_subject(@email) %>
   </div>
+
   <br>
+
   <div>
   	<%= email_text_body(@email) %>
   </div>
