@@ -38,13 +38,8 @@
                 <% elsif current_user.monster_id == 4 %>
                   <div class="monster-background" style="background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/morning-park.png);">
                 <% end %>
-
-                  <!-- <%= image_tag(Monster.find(current_user.monster_id).background) %> -->
                   <div class="monster-place">
-                    <!-- <%= image_tag(reaction(Monster.find(current_user.monster_id))) %> -->
-                    <p>
-                      monster here
-                    </p>
+                    <%= image_tag(reaction(Monster.find(current_user.monster_id))) %>
                   </div>
                 </div> <!-- closing div for monster background -->
               </div>
