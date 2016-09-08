@@ -1,0 +1,12 @@
+<div>
+	<%= form_tag "/create" do%>
+		<%= label_tag 'to'%>
+		<%= email_field_tag :address %>
+
+	<%= label_tag 'subject'%>
+	<%= text_field_tag :subject %>
+
+	<%= label_tag 'body'%>
+	<%= text_area_tag :body %>
+	<%= submit_tag 'send' %>
+<% end %>
