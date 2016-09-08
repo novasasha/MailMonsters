@@ -13,9 +13,9 @@ class EmailsController < ApplicationController
 # open a mail depending on what is supplied to as params eg inbox, trash junk
   def mailbox
     if current_user != nil
-    @emails = []
-    mailbox = params[:mailbox]
-    @emails = user_gmail_recent(mailbox)
+      @emails = []
+      mailbox = params[:mailbox]
+      @emails = user_gmail_recent(mailbox)
     else
       redirect_to root_path
     end
