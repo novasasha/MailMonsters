@@ -88,18 +88,21 @@ class ApplicationController < ActionController::Base
   end
 
   def unread_message_check
-    user_gmail.inbox.count(:unread) < 10
+    # user_gmail.inbox.count(:unread) < 10
+    true
   end
 
   def junk_check
-    user_gmail.mailbox('junk').count < 10
+    # user_gmail.mailbox('junk').count < 10
+    true
   end
 
   def to_do_check
-    if !user_gmail.labels.all.include?('todo')
-      true
-    else
-      user_gmail.label('todo').emails.count < current_user.to_do_limit
-    end
+    # if !user_gmail.labels.all.include?('todo')
+    #   true
+    # else
+    #   user_gmail.label('todo').emails.count < current_user.to_do_limit
+    # end
+    true
   end
 end

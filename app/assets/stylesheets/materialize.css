@@ -4598,12 +4598,12 @@ small {
 }
 
 .card.horizontal .card-image {
-  max-width: 50%;
+  max-width: 190px;
 }
 
 .card.horizontal .card-image img {
-  max-width: 100%;
-  width: auto;
+  max-width: 190px;
+  /*width: auto;*/
 }
 
 .card.horizontal .card-stacked {
