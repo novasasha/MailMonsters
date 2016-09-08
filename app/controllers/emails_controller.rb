@@ -4,8 +4,6 @@ class EmailsController < ApplicationController
   def search
     query = params[:query]
     @emails = user_gmail.inbox.emails(gm: query)
-    puts "----------------PARAMS-------------"
-    p request.original_url
   end
 
 # open a mail depending on what is supplied to as params eg inbox, trash junk

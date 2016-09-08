@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 	#these handle searches
 	get ':mailbox/search', to: 'emails#search'
 
+
 	# this leads to a specified mailbox eg. inbox, trash, junk, starred, etc.
 	get ':mailbox', to: 'emails#mailbox', as: 'index'
 
