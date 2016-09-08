@@ -46,7 +46,7 @@
           <h1>I dont have a monster</h1>
         <% end %>
       <% else %>
-        <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+        <%= render "emails/login" %>
       <% end %>
     </div>
   </body>
