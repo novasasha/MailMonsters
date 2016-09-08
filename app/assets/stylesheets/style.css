@@ -130,8 +130,10 @@ main {
 .monster-background {
   float: right;
   width: 100%;
+  height: 380px;
   background-color: transparent;
-  /*border: 1px solid green;*/
+  background-repeat: repeat-x;
+  border: 1px solid green;
 }
 .dragon {
   float: right;
@@ -139,7 +141,6 @@ main {
   background-color: transparent;
   /*border: 1px solid green;*/
   background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/sakura-bg.png);
-  background-repeat: repeat-x;
 }
 .chicken {
   float: right;

@@ -29,16 +29,16 @@
           <nav class="top-nav">
             <!-- <div class="container"> -->
               <div class="nav-wrapper">
-                <div class="monster-background">
-                <!-- <% if current_user.monster_id == 1 %>
-                <div class="dragon">
+                <% if current_user.monster_id == 1 %>
+                  <div class="monster-background" style="background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/sakura-bg.png);">
                 <% elsif current_user.monster_id == 2 %>
-                <div class="cat">
+                  <div class="monster-background" style="background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/high-mountain.png);">
                 <% elsif current_user.monster_id == 3 %>
-                <div class="chicken">
+                  <div class="monster-background" style="background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/cookie-mountain.png);">
                 <% elsif current_user.monster_id == 4 %>
-                <div class="bird">
-                <% end %> -->
+                  <div class="monster-background" style="background-image: url(https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/backgrounds/morning-park.png);">
+                <% end %>
+
                   <!-- <%= image_tag(Monster.find(current_user.monster_id).background) %> -->
                   <div class="monster-place">
                     <!-- <%= image_tag(reaction(Monster.find(current_user.monster_id))) %> -->
@@ -46,7 +46,7 @@
                       monster here
                     </p>
                   </div>
-                </div>
+                </div> <!-- closing div for monster background -->
               </div>
             <!-- </div> -->
           </nav>
