@@ -3,11 +3,7 @@ class MonstersController < ApplicationController
 # determines if the user is logged in and if the user is a new user to this site
   def index
     if current_user != nil
-      if current_user.monster_id == nil
-        redirect_to monster_selector_path
-      else
-        redirect_to "/inbox"
-      end
+      redirect_to "/inbox"
     end
   end
 
