@@ -1,46 +1,27 @@
 class EmailsController < ApplicationController
 
-  def index
-    if current_user != nil
-      if current_user.monster_id == nil
-        redirect_to monster_selector_path
-      end
-      redirect_to inbox_path
-    end
-  end
-
-  def monster_selector
-  end
-
-  def inbox
+# open a mail depending on what is supplied to as params eg inbox, trash junk
+  def mailbox
     @emails = []
-    inbox = user_gmail_mail_box('inbox')
-    @emails = location_emails(inbox)
+    location = params[:mailbox]
+    mailbox = user_gmail_mailbox(location)
+    @emails = location_emails(mailbox)
   end
 
-  def trash
-    trash = user_gmail_mail_box('trash')
-    @emails = []
-    @emails = location_emails(trash)
-  end
-
-  def junk
-    junk = user_gmail_mail_box('junk')
-    @emails = []
-    @emails = location_emails(junk)
-  end
-
-  def email
+# open a clicked on email
+  def show
     index_number = params[:id].to_i
-    inbox = user_gmail_mail_box('inbox')
-    @email = location_emails(inbox)[index_number]
-    render :email
+    location = params[:mailbox]
+    box = user_gmail_mailbox(location)
+    @email = location_emails(box)[index_number]
   end
 
-  def compose
+# links to a page to create a email
+  def new
   end
 
-  def send_email
+# sends the email 
+  def create
     email_address = params[:address]
     email_subject = params[:subject]
     email_body = params[:body]
@@ -54,11 +35,11 @@ class EmailsController < ApplicationController
     redirect_to root_path
   end
 
+# deletes the email from the inbox and moves it to the trash
   def destroy
     index_number = params[:id].to_i
     @email = inbox_emails[index_number]
     @email.delete!
     redirect_to root_path
   end
-
 end

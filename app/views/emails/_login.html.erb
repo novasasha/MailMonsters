@@ -1,0 +1,26 @@
+<div class="login-wrap">
+  <div class="valign-wrapper">
+    <div class="row" style="padding-top:10%">
+      <div class="col s12 m3 l3"></div>
+      <div class="col s12 m6 l6">
+        <div class="card-panel white">
+          <div class="logo-button">
+            <div class="card-content">
+              <div class="row">
+                <!-- <div class="col s12"> -->
+                  <%= image_tag("https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/logo-cloud.png", :alt => "logo", :class => "logo") %>
+                <!-- </div> -->
+              </div>
+              <div class="row">
+                <!-- <div class="col s12"> -->
+                  <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class: "waves-effect waves-light btn-large" %>
+                <!-- </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m3 l3"></div>
+    </div>
+  </div>
+</div>

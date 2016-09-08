@@ -1,0 +1,38 @@
+<div class="login-wrap">
+  <div class="valign-wrapper">
+    <div class="row" style="padding-top:2%">
+      <div class="col s12 m3 l3"></div>
+      <div class="col s12 m6 l6">
+        <div class="card-panel white">
+          <div class="logo-button">
+            <div class="card-content">
+							<h1 class="black-text center-align">Select Your Monster!</h1>
+              <div class="row">
+								<div class="monster-buttons">
+									<%= form_tag '/monster_choice' do%>
+									<div class="row">
+										<%= image_tag("https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/Dragon/dragon-flying.gif", id: "monster-select") %>
+										<%= image_tag("https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/Chicken/chicken-flying.gif", id: "monster-select") %>
+									</div>
+									<div class="divider"></div>
+									<div class="row">
+										<%= submit_tag 'Dragon', class: "waves-effect waves-green btn-flat" %>
+										<%= submit_tag 'Chicken', class: "waves-effect waves-red btn-flat" %>
+									</div>
+									<div class="row">
+										<%= image_tag("https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/Cat/cat-flying.gif", id: "monster-select") %>
+										<%= image_tag("https://s3-us-west-2.amazonaws.com/mailmonsters/mail-monsters-zip/Bird/bird-flying.gif", id: "monster-select") %>
+									</div>
+									<div class="divider"></div>
+									<%= submit_tag 'Cat', class: "waves-effect waves-yellow btn-flat" %>
+									<%= submit_tag 'Bird', class: "waves-effect waves-teal btn-flat" %>
+									<% end %>
+								</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

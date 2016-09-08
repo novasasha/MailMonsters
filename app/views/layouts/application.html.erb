@@ -2,30 +2,57 @@
 <html>
   <head>
     <title>MailMonsters</title>
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+
+    <!-- CSS 1-materialize, 2-rails default -->
+    <!-- 1 -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
+    <%= stylesheet_link_tag    'materialize', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- 2 -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   </head>
   <body>
     <div id='app-area'>
       <% if current_user %>
-        <div>
-          Signed in as <strong><%= current_user.name %></strong>!
-          <%= link_to "Sign out", signout_path, id: "sign_out" %>
-        </div>
-
-        <div>
-        <%= link_to 'Compose', new_email_path %>
-        </div>
-        
-
+        <% if current_user.monster_id != nil %>
+          <nav class="top-nav">
+            <div class="container">
+              <div class="nav-wrapper">
+                <div class='monster-background'>
+                  <%= image_tag(Monster.find(current_user.monster_id).background) %>
+                  <div>
+                    <%= image_tag(Monster.find(current_user.monster_id).positive_reactions[0]) %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <div class="container">
+            <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a>
+          </div>
+          <!-- render navigation partial -->
+          	<%= render "layouts/nav" %>
+          <!-- render mailbox -->
+            <!-- container -->
+            <%= yield %>
+            <!-- container -->
+        <% else %>
+          <!-- render monster selector -->
+          <h1>I dont have a monster</h1>
+        <% end %>
       <% else %>
-        <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
-
+        <%= render "emails/login" %>
       <% end %>
-      <%= yield %>
     </div>
   </body>
 </html>
