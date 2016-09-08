@@ -64,7 +64,8 @@ class EmailsController < ApplicationController
   def destroy
     if current_user != nil
       index_number = params[:id].to_i
-      @email = inbox_emails[index_number]
+      mailbox = user_gmail_mailbox('inbox')
+      @email = location_emails(mailbox)[index_number]
       @email.delete!
     else
     end
