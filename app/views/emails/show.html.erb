@@ -7,7 +7,7 @@
 	<button class="btn blue white-text">Reply</button>
 	<button class="btn blue white-text">Forward</button>
 		<h4><%= email_subject(@email) %></h4>
-		<p class="flow-text">
+		<p>
 			<%= email_text_body(@email) %>
       <%= button_to "delete", email_delete_path(params[:id]), :method => :delete, class: "btn blue white-text"%>
 		</div>

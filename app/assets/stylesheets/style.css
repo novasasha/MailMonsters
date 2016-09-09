@@ -127,7 +127,7 @@ li.logo{text-align:center;margin-top:0px;margin-bottom:112px}ul.side-nav.fixed l
 .monster-place {
   width: 20%;
   margin: 0 auto;
-  margin-left: 650px;
+  margin-left: 900px;
   padding-top: 100px;
 }
 .monster-place img {
@@ -154,7 +154,7 @@ li.logo{text-align:center;margin-top:0px;margin-bottom:112px}ul.side-nav.fixed l
   border: 1px solid #fff;
 }
 #compose-email-form form textarea {
-  min-height: 100px;
+  min-height: 200px;
   padding: 10px;
   border: 1px solid #ccc;
 }
