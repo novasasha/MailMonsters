@@ -55,7 +55,7 @@ class ApplicationController < ActionController::Base
     if email.message.text_part
   	   email.message.text_part.body.decoded
     else
-      ""
+      email.message.body.to_s.chomp
     end
   end
 
