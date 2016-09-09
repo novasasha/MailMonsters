@@ -149,6 +149,18 @@ li.logo{text-align:center;margin-top:0px;margin-bottom:112px}ul.side-nav.fixed l
   float: right;
   font-weight: bold;
 }
+#compose-email-form form {
+  padding: 10px;
+  border: 1px solid #fff;
+}
+#compose-email-form form textarea {
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+#compose-email-form form input:active {
+  border: 1px solid #ccc;
+}
 
 /* MONSTER SELECTOR BUTTONS*/
 .monster-button {
