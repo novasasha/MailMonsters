@@ -1,29 +1,17 @@
 <div class="container">
-	<h1><%= @mailbox %>Search Results</h1>
 </div>
 <div id='email-area'>
-	<ul class="collection">
+	<ul class="collection with-header">
+        <li class="collection-header"><h4>Search Results</h4></li>
 	  <% i = (@emails.length) - 1 %>
 	  <% until i < 0 %>
 	  <li class="collection-item">
-	    <table>
-	        <tr class='email-information'>
-	          <td><a href='<%= show_email_path('all',i) %>'><%= sender_name(@emails[i])[0] %></a></td>
-	          <td>
+					<span class="bold"><a href='<%= show_email_path("all",i) %>'><%= sender_name(@emails[i])[0] %></a></span>
 
-	            <a href='<%= show_email_path('all',i) %>'>
-	            <span><%= email_subject(@emails[i]) %></span>
+					<a href='<%= show_email_path("all",i) %>'><%= email_subject(@emails[i]) %></a>
 
-	              <span><% email_text_body(@emails[i]) %></span>
-	              </a>
-	          </td>
-	            <td>
-	              <a href='<%= show_email_path('all',i) %>'>
-	              <%= email_recieved_date(@emails[i])%>
-	              </a>
-	            </td>
-	        </tr>
-	    </table>
+					<span class="date"><a href='<%= show_email_path("all",i) %>'>
+					<%= email_recieved_date(@emails[i])%></a></span>
 	  </li>
 	  <% i -= 1 %>
 	  <% end %>
