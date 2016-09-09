@@ -1,6 +1,7 @@
 <div id='email-area'>
 		<!-- <%= render "emails/emails" %> -->
-		<ul class="collection">
+		<ul class="collection with-header">
+			<li class="collection-header"><h4>Inbox</h4></li>
 		  <% i = (@emails.length) - 1 %>
 		  <% until i < 0 %>
 		  <li class="collection-item">
