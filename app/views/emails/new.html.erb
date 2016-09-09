@@ -1,12 +1,16 @@
-
+<div id="compose-email-form">
 	<%= form_tag "/create" do%>
-
-		<%= email_field_tag :address %>
-
-
-	<%= text_field_tag :subject %>
-
-	
-	<%= text_area_tag :body %>
-	<%= submit_tag 'send' %>
-<% end %>
+		<div class="row">
+				<%= label_tag 'To:'%>
+				<%= email_field_tag :address %>
+		</div>
+		<div class="row">
+			<%= label_tag 'Subject:'%>
+			<%= text_field_tag :subject %>
+		</div>
+		<div class="row">
+			<%= text_area_tag :body %>
+			<%= submit_tag 'send', class: '' %>
+		</div>
+	<% end %>
+</div>
